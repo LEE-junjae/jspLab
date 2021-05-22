@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jspf" %>
+
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -11,7 +12,6 @@
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 					<li class="active">Dashboard</li>
 				</ol>
-			</section>
 			<div id="visual">
 				<div id="mySwipe" class='swipe'>
 					<ul class="touch_banner swipe-wrap" style="text-align: center;">

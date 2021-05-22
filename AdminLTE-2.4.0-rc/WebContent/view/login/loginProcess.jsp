@@ -2,10 +2,17 @@
 <%
 	String id = request.getParameter("email");
 	String pw = request.getParameter("password");
+	
+	String uid = "hanguk@naver.com";
+	String upw = "1234";
 
-	if (id.equals("hanguk@naver.com") || id == "hanguk@naver.com") {
-		if (pw.equals("1234")) { //방문자가 입력한 pw가 "1234"와 일치할 경우
-			request.getSession().setAttribute("id", id);
+	if (id.equals(uid) || id == uid) {
+		if (pw.equals(upw)) {
+			session.setAttribute("MEMBERID", id);
+			//Cookie user = new Cookie("id",id); //-쿠키적용
+			//user.setPath("/"); //-쿠키적용
+			//response.addCookie(user); //-쿠키적용
+			//request.getSession().setAttribute("id", id);0520
 			response.sendRedirect("../main/index.jsp");
 		} else { //비밀번호가 일치하지 않을 경우
 			%>

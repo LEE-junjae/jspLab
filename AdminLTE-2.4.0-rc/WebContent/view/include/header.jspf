@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="guestbook.model.Message"%>
+<%@ page import="guestbook.service.MessageListView"%>
+<%@ page import="guestbook.service.GetMessageListService"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="kr" /> 
 <fmt:setLocale value="ja" /> 
 <fmt:setLocale value="cn" /> 
@@ -385,6 +389,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          	<li><a href="../examples/guestbook.jsp"><i class="fa fa-circle-o"></i> 방명록</a></li>
           	<li><a href="../examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선일보</a></li>
           	<li><a href="../examples/donga.jsp"><i class="fa fa-circle-o"></i> 동아일보</a></li>
             <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>

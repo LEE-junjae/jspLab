@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="guestbook.model.Message"%>
+<%@ page import="guestbook.service.MessageListView"%>
+<%@ page import="guestbook.service.GetMessageListService"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

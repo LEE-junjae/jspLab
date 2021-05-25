@@ -25,8 +25,7 @@
 		String dbPass = "jsppw";
 		
 		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
-		pstmt = conn.prepareStatement(
-			"insert into MEMBER values (?, ?, ?, ?)");
+		pstmt = conn.prepareStatement("insert into MEMBER values (?, ?, ?, ?)");
 		pstmt.setString(1, memberID);
 		pstmt.setString(2, password);
 		pstmt.setString(3, name);

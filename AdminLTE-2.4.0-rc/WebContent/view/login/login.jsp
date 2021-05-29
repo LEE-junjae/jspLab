@@ -1,4 +1,7 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,13 +42,19 @@
 <body class="hold-transition login-page">
    <div class="login-box">
       <div class="login-logo">
-         <a href="../main/index.jsp"><b>Admin</b>LTE</a>
+         <a href="../../index2.html"><b>Admin</b>LTE</a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-         <p class="login-box-msg">Sign in to start your session</p>
+         <p class="login-box-msg">
+         <c:if test="${errors.idOrPwNotMatch}">
+					아이디와 암호가 일치하지 않습니다.
+				</c:if>
+				<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+				<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+		</p>
 
-         <form action="loginProcess.jsp" method="post">
+         <form action="${pageContext.request.contextPath}/login.do" method="post">
             <div class="form-group has-feedback">
                <input type="email" class="form-control" name="email" id="email"
                   placeholder="Email"> <span
@@ -81,8 +90,8 @@
          </div>
          <!-- /.social-auth-links -->
 
-         <a href="#">I forgot my password</a><br> <a href="register.html"
-            class="text-center">Register a new membership</a>
+         <a href="#">비번 찾기</a><br> <a href="join.do"
+            class="text-center">회원가입</a>
 
       </div>
       <!-- /.login-box-body -->

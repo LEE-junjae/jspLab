@@ -41,14 +41,14 @@
 		메시지 번호: ${message.id} <br/>
 		손님 이름: ${message.guestName} <br/>
 		메시지: ${message.message} <br/>
-		<a href="confirmDeletion.jsp?messageId=${message.id}">[삭제하기]</a>
+		<a href="../guestbook/confirmDeletion.jsp?messageId=${message.id}">[삭제하기]</a>
 		</td>
 	</tr>
 	</c:forEach>
 </table>
 
 <c:forEach var="pageNum" begin="1" end="${viewData.pageTotalCount}">
-<a href="list.jsp?page=${pageNum}">[${pageNum}]</a> 
+<a href="../guestbook/list.jsp?page=${pageNum}">[${pageNum}]</a> 
 </c:forEach>
 
 </c:if>

@@ -35,9 +35,17 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">
+				<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+				<c:if test="${errors.duplicateId}">이미 사용중인 아이디입니다.</c:if>
+				<c:if test="${errors.name}">이름을 입력하세요.</c:if>
+				<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+				<c:if test="${errors.confirmPassword}">확인을 입력하세요.</c:if>
+				<c:if test="${errors.notMatch}">암호와 확인이 일치하지 않습니다.</c:if>
+			</p>
 
-    <form action="registProcess.jsp" method="post">
+			<!-- <form action="registerProcess.jsp" method="post"> -->
+    <form action="join.do" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Full name" name="name">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -71,14 +79,14 @@
     </form>
 
     <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-        Google+</a>
-    </div>
+				<p>- OR -</p>
+				<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i
+					class="fa fa-facebook"></i> Sign up using Facebook</a> <a href="#"
+					class="btn btn-block btn-social btn-google btn-flat"><i
+					class="fa fa-google-plus"></i> Sign up using Google+</a>
+			</div>
 
-    <a href="login.html" class="text-center">I already have a membership</a>
+    <a href="login.do" class="text-center">가입 취소</a>
   </div>
   <!-- /.form-box -->
 </div>

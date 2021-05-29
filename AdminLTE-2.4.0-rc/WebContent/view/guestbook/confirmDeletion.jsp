@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="deleteMessage.jsp" method="post">
+<form action="../guestbook/deleteMessage.jsp" method="post">
 <input type="hidden" name="messageId" value="${param.messageId}">
 메시지를 삭제하시려면 암호를 입력하세요:<br>
 암호: <input type="password" name="password"> <br>

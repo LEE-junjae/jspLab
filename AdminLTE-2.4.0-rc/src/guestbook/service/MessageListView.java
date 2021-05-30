@@ -1,5 +1,6 @@
 package guestbook.service;
 
+
 import java.util.List;
 
 import guestbook.model.Message;

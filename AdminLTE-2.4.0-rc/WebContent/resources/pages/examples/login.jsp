@@ -1,5 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType = "text/html; charset=utf-8" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -21,7 +22,6 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
 <!-- iCheck -->
-f
 <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,20 +38,22 @@ f
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="../../index2.html"><b>사용자</b>5G</a>
+			<a href="../../index2.html"><b>Admin</b>LTE</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">Sign in to start your session</p>
+			<p class="login-box-msg">로그인하십시오.</p>
 
-			<form action="loginProcess.jsp" method="post">
+			<form action="loginprocess.jsp" method="post">
 				<div class="form-group has-feedback">
-					<input type="email" class="form-control" id="email" name="email" placeholder="Email"> 
-					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<input type="email" name="email" id="email" class="form-control"
+						placeholder="Email"> <span
+						class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" class="form-control" id="password" name="password"  placeholder="Password"> 
-					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<input type="password" name="password" id="password"
+						class="form-control" placeholder="Password"> <span
+						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div class="row">
 					<div class="col-xs-8">
@@ -62,11 +64,13 @@ f
 					</div>
 					<!-- /.col -->
 					<div class="col-xs-4">
-						<button type="submit" class="btn btn-primary btn-block btn-flat"id="btn1">Sign In</button>
+						<button type="submit" id="btn1"
+							class="btn btn-primary btn-block btn-flat">Sign In</button>
 					</div>
 					<!-- /.col -->
 				</div>
 			</form>
+
 			<div class="social-auth-links text-center">
 				<p>- OR -</p>
 				<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i
@@ -98,18 +102,15 @@ f
 				increaseArea : '20%' // optional
 			});
 		});
-		
-		
-		</script>
-		
-		<!-- <script type="text/javascript">
+	</script>
+	<!-- <script type="text/javascript">
 		//<![CDATA[
 		document.getElementById("btn1").onclick = function() {
 			var user_id = document.getElementById("email").value;
 			var user_pw = document.getElementById("password").value;
 			var result = login(user_id, user_pw);
 			if(!result){
-				return false; // 실패하면 페이지를 이동하지않는다.
+				eturn false; // 실패하면 페이지를 이동하지않는다.
 			}
 		}
 		function login(id, pw) {
@@ -132,5 +133,8 @@ f
 
 		//]]>
 	</script> -->
+	
+	
 </body>
 </html>
+

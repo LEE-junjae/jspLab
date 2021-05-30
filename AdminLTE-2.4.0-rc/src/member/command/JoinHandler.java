@@ -13,7 +13,7 @@ import mvc.command.CommandHandler;
 
 public class JoinHandler implements CommandHandler {
 
-	private static final String FORM_VIEW = "/WEB-INF/view/joinForm.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/login/register.jsp";
 	private JoinService joinService = new JoinService();
 	
 	@Override
@@ -34,7 +34,7 @@ public class JoinHandler implements CommandHandler {
 
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) {
 		JoinRequest joinReq = new JoinRequest();
-		joinReq.setId(req.getParameter("id"));
+		joinReq.setId(req.getParameter("email"));
 		joinReq.setName(req.getParameter("name"));
 		joinReq.setPassword(req.getParameter("password"));
 		joinReq.setConfirmPassword(req.getParameter("confirmPassword"));
@@ -50,7 +50,7 @@ public class JoinHandler implements CommandHandler {
 		
 		try {
 			joinService.join(joinReq);
-			return "/WEB-INF/view/joinSuccess.jsp";
+			return "/WEB-INF/view/login/joinSuccess.jsp";
 		} catch (DuplicateIdException e) {
 			errors.put("duplicateId", Boolean.TRUE);
 			return FORM_VIEW;

@@ -13,7 +13,7 @@ import member.service.MemberNotFoundException;
 import mvc.command.CommandHandler;
 
 public class ChangePasswordHandler implements CommandHandler {
-	private static final String FORM_VIEW = "/WEB-INF/view/changePwdForm.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/examples/profile.jsp";
 	private ChangePasswordService changePwdSvc = new ChangePasswordService();
 	
 	@Override
@@ -45,9 +45,9 @@ public class ChangePasswordHandler implements CommandHandler {
 		String newPwd = req.getParameter("newPwd");
 		
 		if (curPwd == null || curPwd.isEmpty()) {
-			errors.put("curPwd", Boolean.TRUE);
+			errors.put("curPwd", Boolean.TRUE); 
 		}
-		if (curPwd == null || curPwd.isEmpty()) {
+		if (newPwd == null || newPwd.isEmpty()) {
 			errors.put("newPwd", Boolean.TRUE);
 		}
 		if (!errors.isEmpty()) {
@@ -56,7 +56,7 @@ public class ChangePasswordHandler implements CommandHandler {
 		
 		try {
 			changePwdSvc.changePassword(user.getId(), curPwd, newPwd);
-			return "/WEB-INF/view/changePwdSuccess.jsp";
+			return "/WEB-INF/view/examples/changePwdSuccess.jsp";
 		} catch (InvalidPasswordException e) {
 			errors.put("badCurPwd", Boolean.TRUE);
 			return FORM_VIEW;

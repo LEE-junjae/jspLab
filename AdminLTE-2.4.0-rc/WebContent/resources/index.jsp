@@ -1,7 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%
-	String id = (String)pageContext.getSession().getAttribute("id");
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +46,10 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+<link rel="stylesheet" type="text/css"
+	href="./pages/examples/css/base.css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="./pages/examples/css/main.css" media="all" />
 <!-- Google Font -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -59,7 +61,7 @@
 			<!-- Logo -->
 			<a href="index.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>어드민</b>엘티이</span>
+				<span class="logo-lg"><b>어드민엘티이</b>ìí°ì´</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
@@ -247,9 +249,13 @@
 								<li class="footer"><a href="#">View all tasks</a></li>
 							</ul></li>
 						<!-- User Account: style can be found in dropdown.less -->
-						<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="dist/img/user2-160x160.jpg" class="user-image"	alt="User Image">
-						<span class="hidden-xs"><%=id %></span>
+						<li class="dropdown user user-menu"><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								src="dist/img/user2-160x160.jpg" class="user-image"
+								alt="User Image"> <span class="hidden-xs"> <%
+ String id = request.getParameter("email");
+ %><%=id%>
+							</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
@@ -511,28 +517,37 @@
 			</section>
 			<div id="visual">
 				<div id="mySwipe" class='swipe'>
-					<ul class="touch_banner swipe-wrap" style="text-align: center;">
-						<!-- 배너 목록 -->
-						<li><a href="#"><img src="images/visual_img_1.jpg" alt="" /></a></li>
-						<li><a href="#"><img src="images/visual_img_2.jpg" alt="" /></a></li>
-						<li><a href="#"><img src="images/visual_img_3.jpg" alt="" /></a></li>
+					<ul class="touch_banner swipe-wrap" style="text-align: center">
+						<!--Â ë°°ë ëª©ë¡Â -->
+						<li><a href="#"><img
+								src="./pages/examples/images/visual_img_1.jpg" alt="" /></a></li>
+						<li><a href="#"><img
+								src="./pages/examples/images/visual_img_2.jpg" alt="" /></a></li>
+						<li><a href="#"><img
+								src="./pages/examples/images/visual_img_3.jpg" alt="" /></a></li>
 					</ul>
 				</div>
 				<ul class="touch_bullet">
-					<!-- 배너 위치 표시 -->
-					<li><img src="images/visual_bullet_on.png" class="active"
+					<!--Â ë°°ë ìì¹ íìÂ -->
+					<li><img src="./pages/examples/images/visual_bullet_on.png"
+						class="active" alt="" /></li>
+					<li><img src="./pages/examples/images/visual_bullet_off.png"
 						alt="" /></li>
-					<li><img src="images/visual_bullet_off.png" alt="" /></li>
-					<li><img src="images/visual_bullet_off.png" alt="" /></li>
+					<li><img src="./pages/examples/images/visual_bullet_off.png"
+						alt="" /></li>
 				</ul>
 				<p class="touch_left_btn">
-					<!-- 이전 버튼 -->
-					<a href="#"> <img src="images/visual_btn_left.png" alt="이전 배너" />
+					<!--Â ì´ì  ë²í¼Â -->
+					<a href="#"> <img
+						src="./pages/examples/images/visual_btn_left.png"
+						alt="ì´ì  ë°°ë" />
 					</a>
 				</p>
 				<p class="touch_right_btn">
-					<!-- 이전 버튼 -->
-					<a href="#"> <img src="images/visual_btn_right.png" alt="다음 배너" />
+					<!--Â ì´ì  ë²í¼Â -->
+					<a href="#"> <img
+						src="./pages/examples/images/visual_btn_right.png"
+						alt="ë¤ì ë°°ë" />
 					</a>
 				</p>
 			</div>
@@ -1252,25 +1267,6 @@
 	</script>
 	<!-- Bootstrap 3.3.7 -->
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	
-	<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	<!-- 제이쿼리 라이이브러리 연동 -->
-
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<!-- 터치 슬라이드 스타일(CSS) 연동 -->
-	<script type="text/javascript" src="js/swipe.js"></script>
-	<!-- 터치 슬라이드 플러그인 연동 -->
-	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-	<!-- bxSlider 플러그인 연동 -->
-	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-	<!-- UI 플러그인 연동 -->
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<!-- 쿠키 플러그인 연동 -->
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>	
-	
 	<!-- Morris.js charts -->
 	<script src="bower_components/raphael/raphael.min.js"></script>
 	<script src="bower_components/morris.js/morris.min.js"></script>
@@ -1299,6 +1295,29 @@
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
 	<!-- AdminLTE App -->
 	<script src="dist/js/adminlte.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<!-- ì ì´ì¿¼ë¦¬ ë¼ì´ì´ë¸ë¬ë¦¬ ì°ë -->
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- í°ì¹ ì¬ë¼ì´ë ì¤íì¼(CSS) ì°ë -->
+	<script type="text/javascript" src="./pages/examples/js/swipe.js"></script>
+	<!-- í°ì¹ ì¬ë¼ì´ë íë¬ê·¸ì¸ ì°ë -->
+	<script type="text/javascript"
+		src="./pages/examples/js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider íë¬ê·¸ì¸ ì°ë -->
+	<script type="text/javascript"
+		src="./pages/examples/js/jquery-ui-1.10.4.custom.min.js"></script>
+	<!-- UI íë¬ê·¸ì¸ ì°ë -->
+	<script type="text/javascript"
+		src="./pages/examples/js/jquery.cookie.js"></script>
+	<!-- ì¿ í¤ íë¬ê·¸ì¸ ì°ë -->
+	<script type="text/javascript" src="./pages/examples/js/common.js"></script>
+	<script type="text/javascript" src="./pages/examples/js/main.js"></script>
+
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="dist/js/pages/dashboard.js"></script>
 	<!-- AdminLTE for demo purposes -->
